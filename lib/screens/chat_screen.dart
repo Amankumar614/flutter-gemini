@@ -44,7 +44,6 @@ class _ChatScreenState extends State<ChatScreen> {
           _scrollToBottom();
         }
 
-        // auto scroll to bottom on new message
         chatProvider.addListener(() {
           if (chatProvider.inChatMessages.isNotEmpty) {
             _scrollToBottom();
@@ -61,10 +60,10 @@ class _ChatScreenState extends State<ChatScreen> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CircleAvatar(
+                    backgroundColor: Colors.cyan.shade400,
                     child: IconButton(
                       icon: const Icon(Icons.add),
                       onPressed: () async {
-                        // show my animated dialog to start new chat
                         showMyAnimatedDialog(
                           context: context,
                           title: 'Start New Chat',

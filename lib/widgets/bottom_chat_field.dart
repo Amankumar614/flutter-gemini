@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:test_flutter/providers/chat_provider.dart';
 import 'package:test_flutter/utility/utilites.dart';
@@ -128,7 +129,7 @@ class _BottomChatFieldState extends State<BottomChatField> {
                           }
                         },
                   decoration: InputDecoration.collapsed(
-                      hintText: 'Enter  a promt...',
+                      hintText: 'Enter a promt...',
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(30),
@@ -150,13 +151,21 @@ class _BottomChatFieldState extends State<BottomChatField> {
                       },
                 child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                      color: Colors.cyan,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     margin: const EdgeInsets.all(5.0),
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(Icons.arrow_upward, color: Colors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: widget.chatProvider.isLoading
+                          ? Container(
+                              width: 25,
+                              height: 25,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: const SpinKitDoubleBounce(
+                                  color: Colors.white))
+                          : const Icon(Icons.arrow_upward, color: Colors.white),
                     )),
               )
             ],

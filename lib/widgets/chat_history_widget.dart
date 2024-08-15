@@ -18,9 +18,10 @@ class ChatHistoryWidget extends StatelessWidget {
     return Card(
       child: ListTile(
         contentPadding: const EdgeInsets.only(left: 10.0, right: 10.0),
-        leading: const CircleAvatar(
+        leading: CircleAvatar(
+          backgroundColor: Colors.cyan[400],
           radius: 30,
-          child: Icon(Icons.chat),
+          child: const Icon(Icons.chat),
         ),
         title: Text(
           chat.prompt,

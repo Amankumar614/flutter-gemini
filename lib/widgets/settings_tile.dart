@@ -20,7 +20,7 @@ class SettingsTile extends StatelessWidget {
       child: ListTile(
         leading: Container(
             decoration: BoxDecoration(
-              color: Colors.deepPurple,
+              color: Colors.cyan,
               borderRadius: BorderRadius.circular(10.0),
             ),
             child: Padding(

@@ -13,7 +13,6 @@ class UserModel extends HiveObject {
   @HiveField(2)
   final String image;
 
-  // constructor
   UserModel({
     required this.uid,
     required this.name,

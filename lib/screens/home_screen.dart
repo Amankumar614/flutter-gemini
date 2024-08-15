@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/screens/chat_history_screen.dart';
 import 'package:test_flutter/screens/chat_screen.dart';
-import 'package:test_flutter/screens/profile_screen.dart';
+import 'package:test_flutter/screens/settings_screen.dart';
 
 import '../providers/chat_provider.dart';
 
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const ChatHistoryScreen(),
     const ChatScreen(),
-    const ProfileScreen(),
+    const SettingsScreen(),
   ];
 
   @override
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: chatProvider.currentIndex,
               elevation: 0,
-              selectedItemColor: Theme.of(context).colorScheme.primary,
+              selectedItemColor: Colors.cyan,
               onTap: (index) {
                 chatProvider.setCurrentIndex(newIndex: index);
                 chatProvider.pageController.jumpToPage(index);
@@ -51,8 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: 'Chat',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: 'Profile',
+                  icon: Icon(Icons.settings),
+                  label: 'Settings',
                 ),
               ],
             ));
